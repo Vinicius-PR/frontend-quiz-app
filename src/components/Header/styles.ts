@@ -5,6 +5,11 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   margin-top: 83px;
   margin-bottom: 85px;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
   
 `
 

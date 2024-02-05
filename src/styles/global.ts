@@ -12,13 +12,14 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 1160px;
     font-family: 'Rubik', sans-serif;
     color: ${props => props.theme.colors.mainText};
-
+    background-color: ${props => props.theme.colors.background};
+    
     @media (max-width: 1288px) {
-      margin: 0 64px;
+      margin: 0 64px 64px;
     }
 
-    @media (max-width: 760px) {
-      margin: 0 24px;
+    @media (max-width: 375px) {
+      margin: 0 24px 24px;
     }
   }
 `
@@ -34,6 +35,10 @@ export const BodyS = styled.p`
   font-style: italic;
   font-weight: 400;
   line-height: 150%; /* 30px */
+
+  @media (max-width: 375px) {
+    font-size: 0.875rem; // 14px
+  }
 `
 
 export const Display = styled.h1`
@@ -46,12 +51,20 @@ export const HeadingLBold = styled.h1`
   font-size: 4rem; // 64px
   font-weight: 500;
   line-height: 100%; /* 64px */
+
+  @media (max-width: 375px) {
+    font-size: 2.5rem; // 40px
+  }
 `
 
 export const HeadingLRegular = styled.h1`
   font-size: 4rem; // 64px
   font-weight: 300;
   line-height: 100%; /* 64px */
+
+  @media (max-width: 375px) {
+    font-size: 2.5rem; // 40px
+  }
 `
 
 export const HeadingM = styled.h2`
@@ -64,4 +77,8 @@ export const HeadingS = styled.h3`
   font-size: 1.75rem; // 28px
   font-weight: 500;
   line-height: 100%; /* 28px */
+
+  @media (max-width: 375px) {
+    font-size: 1.125rem; // 18px
+  }
 `

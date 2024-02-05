@@ -9,6 +9,10 @@ const lightTheme = {
     lightGray: '#F4F6FA',
     purple : '#A729F5',
     lightPurple: '#D394FA'
+  },
+  breakPoints: {
+    tablet: '768px',
+    MobileM: '375px',
   }
 }
 
