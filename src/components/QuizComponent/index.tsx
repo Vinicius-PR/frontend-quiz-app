@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { QuizContext } from "../../context/QuizContext"
-import { OptionsContainer, QuestionContainer, QuizContainer } from "./styles"
-import { HeadingM } from "../../styles/global"
+import { OptionsContainer, QuestionContainer, QuizContainer, LineDiv } from "./styles"
+import { BodyS, HeadingM, HeadingS } from "../../styles/global"
 
 export default function QuizComponent() {
   const { quiz, quizCount } = useContext(QuizContext)
@@ -10,29 +10,39 @@ export default function QuizComponent() {
   return (
     <QuizContainer>
       <QuestionContainer>
-        <span>Question {quizCount + 1} of {quiz.questions.length}</span>
+        <BodyS>Question {quizCount + 1} of {quiz.questions.length}</BodyS>
         <HeadingM>
           {quiz.questions[quizCount].question}
         </HeadingM>
 
-        <hr />
+        <LineDiv>
+          <hr />
+        </LineDiv>
+
       </QuestionContainer>
 
       <OptionsContainer>
-        <ul>
+        <form action="#">
           {
             quiz.questions[quizCount].options.map((option, index) => {
               return (
-                <li key={index}>
-                  <span>{optionsLetters[index]}</span>
-                  <p>{option}</p>
-                </li>
+                <div>
+                  <input required={true} type="radio" id={option} name={`question number ${quizCount}`} value={option} />
+
+                  <label htmlFor={option}>
+                    <span><HeadingS>{optionsLetters[index]}</HeadingS></span>
+                    <HeadingS>{option}</HeadingS>
+                  </label>
+                </div>
               )
             })
           }
-        </ul>
-
-        <button type="submit">Submit Answer</button>
+          <button type="submit">
+            <HeadingS>
+              Submit Answer
+            </HeadingS>
+          </button>
+        </form>
       </OptionsContainer>
     </QuizContainer>
   )

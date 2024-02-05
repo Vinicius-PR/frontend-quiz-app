@@ -7,11 +7,12 @@ import { GlobalStyle } from "./styles/global";
 import lightTheme from "./styles/themes/light";
 import { QuizContext } from "./context/QuizContext";
 import QuizComponent from "./components/QuizComponent";
+import darkTheme from "./styles/themes/dark";
 
 
 function App() {
 
-  const {quizMode} = useContext(QuizContext)
+  const { quizMode } = useContext(QuizContext)
 
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   function handleSetTheme() {
@@ -19,11 +20,11 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : lightTheme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <Header 
-        handleSetTheme={handleSetTheme}  
-        theme={theme} 
+      <Header
+        handleSetTheme={handleSetTheme}
+        theme={theme}
       />
 
       {

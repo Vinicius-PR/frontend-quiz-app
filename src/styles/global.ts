@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { device } from "../breakpoints";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -14,11 +15,11 @@ export const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.colors.mainText};
     background-color: ${props => props.theme.colors.background};
     
-    @media (max-width: 1288px) {
+    @media ${device.lg} {
       margin: 0 64px 64px;
     }
 
-    @media (max-width: 375px) {
+    @media ${device.sm} {
       margin: 0 24px 24px;
     }
   }
@@ -36,7 +37,11 @@ export const BodyS = styled.p`
   font-weight: 400;
   line-height: 150%; /* 30px */
 
-  @media (max-width: 375px) {
+  @media ${device.sm} {
+    font-size: 1rem; // 16px
+  }
+
+  @media ${device.xs} {
     font-size: 0.875rem; // 14px
   }
 `
@@ -52,7 +57,11 @@ export const HeadingLBold = styled.h1`
   font-weight: 500;
   line-height: 100%; /* 64px */
 
-  @media (max-width: 375px) {
+  @media ${device.sm} {
+    font-size: 3.125rem; // 50px
+  }
+
+  @media ${device.xs} {
     font-size: 2.5rem; // 40px
   }
 `
@@ -62,7 +71,11 @@ export const HeadingLRegular = styled.h1`
   font-weight: 300;
   line-height: 100%; /* 64px */
 
-  @media (max-width: 375px) {
+  @media ${device.sm} {
+    font-size: 3.125rem; // 50px
+  }
+
+  @media ${device.xs} {
     font-size: 2.5rem; // 40px
   }
 `
@@ -78,7 +91,11 @@ export const HeadingS = styled.h3`
   font-weight: 500;
   line-height: 100%; /* 28px */
 
-  @media (max-width: 375px) {
+  @media ${device.sm} {
+    font-size: 1.375rem; // 22px
+  }
+
+  @media ${device.xs} {
     font-size: 1.125rem; // 18px
   }
 `

@@ -1,16 +1,16 @@
 import styled from "styled-components";
+import { device } from "../../breakpoints";
 
 export const HomeContainer = styled.main`
   display: flex;
   justify-content: space-between;
 
-  @media (max-width:768px) {
+  @media ${device.md} {
     flex-direction: column;
     gap: 64px;
   }
 
-  @media (max-width:375px) {
-    flex-direction: column;
+  @media ${device.sm} {
     gap: 40px;
   }
 `
@@ -20,7 +20,7 @@ export const TextContainer = styled.div`
     margin-top: 48px;
   }
 
-  @media (max-width:768px) {
+   @media ${device.md} {
     p {
       margin-top: 16px;
     }
@@ -35,7 +35,7 @@ export const SubjectContainer = styled.div`
     gap: 24px;
 
     li {
-      background-color: ${props => props.theme.colors.pureWhite};
+      background-color: ${props => props.theme.colors.backgroundOptions};
       border-radius: 24px;
       padding: 20px;
       cursor: pointer;
@@ -45,7 +45,7 @@ export const SubjectContainer = styled.div`
     }
   }
 
-  @media (max-width:768px) {
+   @media ${device.md} {
     width: 100%;
   }
 `
