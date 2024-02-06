@@ -13,7 +13,9 @@ declare module "styled-components" {
       pureWhite: string,
       lightGray: string,
       purple: string,
-      lightPurple: string
+      lightPurple: string,
+      green: string,
+      red: string
     }
   }
 }

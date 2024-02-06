@@ -10,7 +10,9 @@ const darkTheme = {
     pureWhite: '#FFFFFF',
     lightGray: '#F4F6FA',
     purple: '#A729F5',
-    lightPurple: '#D394FA'
+    lightPurple: '#D394FA',
+    green: '#26D782',
+    red: '#EE5454'
   }
 }
 

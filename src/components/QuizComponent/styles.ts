@@ -48,6 +48,9 @@ export const OptionsContainer = styled.div`
       position: relative;
       padding: 18px 20px;
       border-radius: 12px;
+      border: 3px solid transparent;
+      display: flex;
+      justify-content: space-between;
 
       input {
         visibility: hidden;
@@ -55,9 +58,15 @@ export const OptionsContainer = styled.div`
       }
 
       label {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        cursor: pointer;
+
         span {
           display: inline-block;
           background-color: ${props => props.theme.colors.lightGray};
+          border-radius: 8px;
           width: 56px;
           height: 56px;
           color: #626C7F;
@@ -65,6 +74,58 @@ export const OptionsContainer = styled.div`
           justify-content: center;
           align-items: center;
         }
+      }
+
+      img {
+        display: none;
+      }
+    }
+
+    div:has(input:not(:disabled):not(:checked)) {
+      label:hover {
+        span{
+          background-color: #F6E7FF;
+          color: ${props => props.theme.colors.purple};
+        }
+      }
+    }
+
+    div:has(input:checked) {
+      border: 3px solid ${props => props.theme.colors.purple};
+
+      span {
+        background-color: ${props => props.theme.colors.purple};
+        color: ${props => props.theme.colors.pureWhite};
+      }
+    }
+
+    div.pickedCorrect {
+      border: 3px solid ${props => props.theme.colors.green};
+      span {
+        background-color: ${props => props.theme.colors.green};
+        color: ${props => props.theme.colors.pureWhite};
+      }
+
+      img.correct {
+        display: inline-block;
+      }
+    }
+
+    div.pickedWrong {
+      border: 3px solid ${props => props.theme.colors.red};
+      span {
+        background-color: ${props => props.theme.colors.red};
+        color: ${props => props.theme.colors.pureWhite};
+      }
+
+      img.wrong {
+        display: inline-block;
+      }
+    }
+
+    div.correctAnswer {
+      img.correct {
+        display: inline-block;
       }
     }
 
