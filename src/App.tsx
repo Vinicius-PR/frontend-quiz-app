@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import { Container } from "./styles/container"
 import { QuizContext } from "./context/QuizContext"
 import StartScreen from "./components/StartScreen"
+import GameScreen from "./components/GameScreen"
 
 function App() {
 
@@ -14,8 +15,7 @@ function App() {
     <Container>
       <Header/>
       {
-        // quizMode === "idle" ? <StartScreen/> : <> Game Running</>
-        <StartScreen/>
+        quizMode === "idle" ? <StartScreen/> : <GameScreen/>
       }
     </Container>
   )

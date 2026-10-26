@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+import { device } from './breakpoints';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -8,6 +9,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-color: ${props => props.theme.colors.background};
+    background-image: ${props => `url("${props.theme.backgroundImages.desktop}")`};
     font-family: 'Rubik', sans-serif;
+
+    @media ${device.md} {
+      background-image: ${props => `url("${props.theme.backgroundImages.tablet}")`};
+    }
+
+    @media ${device.xs} {
+      background-image: ${props => `url("${props.theme.backgroundImages.mobile}")`};
+    }
   }
 `

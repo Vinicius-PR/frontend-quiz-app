@@ -15,7 +15,7 @@ export const textPreset1 = css`
 `
 
 export const textPreset2Medium = css`
-  font-weight: 500;
+  font-weight: 600;
   font-size: 4rem; // 64px
   line-height: 1;
 `
@@ -65,7 +65,7 @@ export const textPreset1Mobile = css`
 
 
 export const textPreset2MobileMedium= css`
-  font-weight: 500;
+  font-weight: 600;
   font-size: 2.5rem; // 40px
   line-height: 1;
 `
