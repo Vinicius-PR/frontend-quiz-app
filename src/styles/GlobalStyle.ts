@@ -8,8 +8,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0 auto;
-    max-width: 1160px;
     font-family: 'Rubik', sans-serif;
   }
 `

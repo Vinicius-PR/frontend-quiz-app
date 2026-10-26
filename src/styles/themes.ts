@@ -1,35 +1,39 @@
-export const darkTheme = {
-  name: 'dark',
-  colors: {
-    background: '#313E51',
-    circle: '#2D3949',
-    mainText: '#FFFFFF', //Pure white
-    semiText: '#ABC1E1', //light Bluish
-    backgroundOptions: '#3B4D66',
-    linecolor: '#3B4D66',
-    pureWhite: '#FFFFFF',
-    lightGray: '#F4F6FA',
-    purple: '#A729F5',
-    lightPurple: '#D394FA',
-    green: '#26D782',
-    red: '#EE5454'
-  }
-}
+import { colors } from './colors';
 
 export const lightTheme = {
   name: 'light',
   colors: {
-    background: '#F4F6FA',
-    circle: '#EDF1F9',
-    mainText: '#313E51', //Dark Navy
-    semiText: '#626C7F', //Grey Navy
-    backgroundOptions: '#FFFFFF',
-    linecolor: '#FFFFFF',
-    pureWhite: '#FFFFFF',
-    lightGray: '#F4F6FA',
-    purple: '#A729F5',
-    lightPurple: '#D394FA',
-    green: '#26D782',
-    red: '#EE5454'
+    background: colors.grey50,
+    text: colors.blue900,
+    spanText: colors.grey500,
+    
+    primary: colors.purple600,
+    primaryLight: colors.purple100,
+    incorrect: colors.red500,
+    green: colors.green500,
+    greenLight: colors.green100,
+    orange: colors.orange400,
+    orangeLight: colors.orange50,
+    blue: colors.blue500,
+    bluelight: colors.blue50,
+  }
+}
+
+export const darkTheme = {
+  name: 'dark',
+  colors: {
+    background: colors.blue900,
+    text: colors.white,
+    spanText: colors.blue300,
+
+    primary: colors.purple600,
+    primaryLight: colors.purple100,
+    incorrect: colors.red500,
+    green: colors.green500,
+    greenLight: colors.green100,
+    orange: colors.orange400,
+    orangeLight: colors.orange50,
+    blue: colors.blue500,
+    bluelight: colors.blue50,
   }
 }
