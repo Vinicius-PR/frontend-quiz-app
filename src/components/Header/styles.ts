@@ -1,37 +1,41 @@
 import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
-import { textPreset4 } from "../../styles/typography";
+import { textPreset4, textPreset4Mobile } from "../../styles/typography";
 
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  /* margin-top: 83px; */
   margin-bottom: 85px;
 
   @media ${device.md} {
-    /* margin-top: 40px; */
     margin-bottom: 50px;
   }
-  
 `
 
-export const SubjectTitle = styled.div`
+export const SubjectTitleContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 1.5rem;
 
-  div {
-    height: 100%;
-    border: 1px solid red;
+  @media ${device.sm} {
+    gap: 1rem;
   }
+`
 
-  h3 {
-    ${textPreset4}
+export const SubjectTitle = styled.h2`
+  ${textPreset4};
+
+  @media ${device.sm} {
+    ${textPreset4Mobile};
   }
 `
 
 export const SwitchContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
+
+  @media ${device.sm} {
+    gap: 0.5rem;
+  }
 `
