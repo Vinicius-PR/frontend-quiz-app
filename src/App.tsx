@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { QuizContext, QuizContextProvider } from "./context/QuizContext"
+import { useContext, useState } from "react"
+import { QuizContext } from "./context/QuizContext"
 
 import Header from "./components/Header"
 import StartScreen from "./components/StartScreen"
@@ -14,20 +14,26 @@ function App() {
 
   const { quizMode } = useContext(QuizContext)
 
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  function handleSetTheme() {
+    setTheme((state) => state === 'light' ? 'dark' : 'light')
+  }
+
   console.log('quizMode is ', quizMode)
 
   return (
-    <QuizContextProvider>
-      <ThemeProvider theme={lightTheme}>
-        <GlobalStyle />
-        <Container>
-          <Header/>
-          {
-            quizMode === "idle" ? <StartScreen/> : <GameScreen/>
-          }
-        </Container>
-      </ThemeProvider>
-    </QuizContextProvider>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyle />
+      <Container>
+        <Header
+          handleSetTheme={handleSetTheme}
+          theme={theme}
+        />
+        {
+          quizMode === "idle" ? <StartScreen/> : <GameScreen/>
+        }
+      </Container>
+    </ThemeProvider>
   )
 }
 
