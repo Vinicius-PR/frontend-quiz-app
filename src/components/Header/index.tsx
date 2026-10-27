@@ -12,7 +12,12 @@ import accesibilityIcon from '../../assets/images/icon-accessibility.svg'
 
 import { HeaderContainer, SubjectTitle, SubjectTitleContainer, SwitchContainer } from './styles'
 
-export default function Header() {
+interface HeaderProps {
+  handleSetTheme: () => void;
+  theme: 'light' | 'dark';
+}
+
+export default function Header({ handleSetTheme, theme }: HeaderProps) {
 
   const { subject } = useContext(QuizContext)
   console.log(subject)
@@ -49,8 +54,8 @@ export default function Header() {
       <SwitchContainer>
         <img src={sunDarkIcon} alt="Sun Icon" />
         <Switch
-          onChange={() => {}}
-          checked={false}
+          onChange={handleSetTheme}
+          checked={theme === 'dark'}
           uncheckedIcon={false}
           checkedIcon={false}
           offColor='#A729F5'
