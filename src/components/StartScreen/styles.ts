@@ -56,6 +56,7 @@ export const SubjectContainer = styled.div`
     li {
       ${textPreset4};
       background-color: ${props => props.theme.colors.backgroundOptions};
+      color: ${props => props.theme.colors.text};
       display: flex;
       align-items: center;
 

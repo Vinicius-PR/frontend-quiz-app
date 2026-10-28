@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${props => props.theme.colors.background};
     background-image: ${props => `url("${props.theme.backgroundImages.desktop}")`};
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Rubik', sans-serif;
 
     @media ${device.md} {
