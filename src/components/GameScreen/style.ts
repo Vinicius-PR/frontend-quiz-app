@@ -20,6 +20,12 @@ export const GameScreenContainer = styled.main`
   }
 `
 
+export const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`
+
 export const SpanQuestionPosition = styled.span`
   ${textPreset6}
   color: ${props => props.theme.colors.spanText};
@@ -31,6 +37,7 @@ export const SpanQuestionPosition = styled.span`
 
 export const QuestionTitle = styled.h2`
   ${textPreset3}
+  color: ${props => props.theme.colors.text};
 
   @media ${device.sm} {
     ${textPreset3Mobile}
@@ -125,4 +132,22 @@ export const SpanOptionLetter = styled.span`
     width: 2.5rem;
     height: 2.5rem;
   }
+`
+
+export const ProgressContainer = styled.div`
+  position: relative;
+  height: 16px;
+  background-color: ${props => props.theme.colors.progressLineBack};
+  border-radius: 8px;
+
+  margin-top: auto;
+`
+
+export const ProgressLine = styled.div<{ $progress: number}>`
+  position: absolute;
+  height: 100%;
+  width: ${({ $progress }) => `${$progress}%`};
+  background-color: ${props => props.theme.colors.primary};
+  border: 4px solid ${props => props.theme.colors.progressLineBack};
+  border-radius: 8px;
 `

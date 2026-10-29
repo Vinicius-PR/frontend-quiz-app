@@ -20,6 +20,7 @@ export const lightTheme = {
     text: colors.blue900,
     spanText: colors.grey500,
     backgroundOptions: colors.white,
+    progressLineBack: colors.white,
 
     white: colors.white,
     primary: colors.purple600,
@@ -46,6 +47,7 @@ export const darkTheme = {
     text: colors.white,
     spanText: colors.blue300,
     backgroundOptions: colors.blue850,
+    progressLineBack: colors.blue850,
 
     white: colors.white,
     primary: colors.purple600,

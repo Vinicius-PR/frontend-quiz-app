@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { QuizContext } from "../../context/QuizContext"
-import { GameScreenContainer, LabelOption, OptionsContainer, SpanOptionLetter } from "./style"
+import { GameScreenContainer, LabelOption, OptionsContainer, ProgressContainer, ProgressLine, QuestionContainer, QuestionTitle, SpanOptionLetter, SpanQuestionPosition } from "./style"
 
 export default function GameScreen() {
   
@@ -8,16 +8,18 @@ export default function GameScreen() {
 
   return (
     <GameScreenContainer>
-      <section>
-        <h3>Question {currentQuestionPos} to {quiz.questions.length}</h3>
-        <h2>
-          {quiz.questions[0].question}
-        </h2>
 
-        <div>
-          <hr />
-        </div>
-      </section>
+      <QuestionContainer>
+        <SpanQuestionPosition>Question {currentQuestionPos} to {quiz.questions.length}</SpanQuestionPosition>
+
+        <QuestionTitle>
+          {quiz.questions[0].question}
+        </QuestionTitle>
+
+        <ProgressContainer>
+          <ProgressLine $progress={(currentQuestionPos * 100) / quiz.questions.length} />
+        </ProgressContainer>
+      </QuestionContainer>
 
       <OptionsContainer>
         <ul>

@@ -13,7 +13,7 @@ const size: Size = {
   sm: '580px', // for mobile screen
   md: '768px', // for tablets
   ml: '950px', // for small laptops
-  lg: '1160px', // for laptops
+  lg: '1170px', // for laptops
   xl: '1440px', // for desktop / monitors
   xxl: '1920px', // for big screens
 } as const satisfies Size
