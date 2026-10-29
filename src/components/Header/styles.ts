@@ -24,6 +24,7 @@ export const SubjectTitleContainer = styled.div`
 
 export const SubjectTitle = styled.h2`
   ${textPreset4};
+  color: ${props => props.theme.colors.text};
 
   @media ${device.sm} {
     ${textPreset4Mobile};
