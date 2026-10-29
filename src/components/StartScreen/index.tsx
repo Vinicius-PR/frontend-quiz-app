@@ -1,6 +1,8 @@
 import { useContext } from "react";
-import { AccessibilityIcon, Container, CssIcon, HtmlIcon, JavaScriptIcon, SpanText, SubjectContainer, Subtitle, TextContainer, Title, TitleContainer } from "./styles";
 import { QuizContext } from "../../context/QuizContext";
+
+import { Container, SpanText, SubjectContainer, Subtitle, TextContainer, Title, TitleContainer } from "./styles";
+import { AccessibilityIcon, CssIcon, HtmlIcon, JavaScriptIcon } from "../../styles/icons";
 
 import htmlIcon from '../../assets/images/icon-html.svg'
 import cssIcon from '../../assets/images/icon-css.svg'

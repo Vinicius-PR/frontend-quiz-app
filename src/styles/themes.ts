@@ -21,6 +21,7 @@ export const lightTheme = {
     spanText: colors.grey500,
     backgroundOptions: colors.white,
 
+    white: colors.white,
     primary: colors.purple600,
     primaryLight: colors.purple100,
     incorrect: colors.red500,
@@ -46,6 +47,7 @@ export const darkTheme = {
     spanText: colors.blue300,
     backgroundOptions: colors.blue850,
 
+    white: colors.white,
     primary: colors.purple600,
     primaryLight: colors.purple100,
     incorrect: colors.red500,

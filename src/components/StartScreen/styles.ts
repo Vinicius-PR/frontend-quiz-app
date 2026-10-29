@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../styles/breakpoints";
-import { textPreset2Light, textPreset2Medium, textPreset6, textPreset4, textPreset2MobileMedium, textPreset2MobileLight, textPreset4Mobile } from "../../styles/typography";
+import { textPreset2Light, textPreset2Medium, textPreset6, textPreset4, textPreset2MobileMedium, textPreset2MobileLight, textPreset4Mobile, textPreset5Mobile } from "../../styles/typography";
 
 export const Container = styled.main`
   display: flex;
@@ -65,9 +65,14 @@ export const SubjectContainer = styled.div`
       cursor: pointer;
       gap: 32px;
       line-height: normal;
+
+       @media ${device.md} {
+        padding: 1rem;
+       }
       
       @media ${device.sm} {
         ${textPreset4Mobile};
+        gap: 1rem;
       }
     }
   }
@@ -75,30 +80,6 @@ export const SubjectContainer = styled.div`
    @media ${device.ml} {
     width: 100%;
   }
-`
-
-export const HtmlIcon = styled.img`
-  background-color: ${props => props.theme.colors.orangeLight};
-  padding: 8px;
-  border-radius: 8px;
-`
-
-export const CssIcon = styled.img`
-  background-color: ${props => props.theme.colors.greenLight};
-  padding: 8px;
-  border-radius: 8px;
-`
-
-export const JavaScriptIcon = styled.img`
-  background-color: ${props => props.theme.colors.bluelight};
-  padding: 8px;
-  border-radius: 8px;
-`
-
-export const AccessibilityIcon = styled.img`
-  background-color: ${props => props.theme.colors.primaryLight};
-  padding: 8px;
-  border-radius: 8px;
 `
 
 export const Subtitle = styled.h2`
@@ -122,4 +103,8 @@ export const Title = styled.h1`
 export const SpanText = styled.span`
   ${textPreset6}
   color: ${props => props.theme.colors.spanText};
+
+  @media ${device.sm} {
+    ${textPreset5Mobile}
+  }
 `

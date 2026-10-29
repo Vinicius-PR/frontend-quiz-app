@@ -16,7 +16,7 @@ const size: Size = {
   lg: '1160px', // for laptops
   xl: '1440px', // for desktop / monitors
   xxl: '1920px', // for big screens
-}
+} as const satisfies Size
 
 export const device = {
   xs: `(max-width: ${size.xs})`,

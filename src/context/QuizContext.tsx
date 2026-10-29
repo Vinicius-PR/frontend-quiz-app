@@ -14,6 +14,7 @@ interface QuizProps {
 }
 
 interface QuizContextProps {
+  currentQuestionPos: number
   quizMode: 'idle' | 'running'
   subject: SubjectProps
   quiz: QuizProps
@@ -38,14 +39,13 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
   const [quiz, setQuiz] = useState<QuizProps>({} as QuizProps)
   const [totalQuestions, setTotalQuestions] = useState(0)
   const [totalRightAnswers, setTotalRightAnswers] = useState(0)
+  const [currentQuestionPos, setCurrentQuestionPos] = useState(1)
 
   function handleSetSubject(subject: SubjectProps) {
 
     const quizData = data.quizzes.find((quiz) => {
       return quiz.title === subject
     })
-
-    // console.log('quiz Data inside the handle set fuction: ', quizData)
 
     if (!quizData) {
       alert(`Subject ${subject} not found`)
@@ -62,7 +62,7 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
   }
 
   function handleCheckAnswer(selectedOption: string, answer: string) {
-
+    setCurrentQuestionPos((current) => current + 1)
     if (selectedOption === answer) {
       setTotalRightAnswers((current) => current + 1)
       return true
@@ -77,6 +77,7 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
     setQuiz({} as QuizProps)
     setTotalQuestions(0)
     setTotalRightAnswers(0)
+    setCurrentQuestionPos(1)
   }
 
   return (
@@ -87,6 +88,7 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
         subject,
         totalQuestions,
         totalRightAnswers,
+        currentQuestionPos,
         handleSetSubject,
         handleCheckAnswer,
         handleReset

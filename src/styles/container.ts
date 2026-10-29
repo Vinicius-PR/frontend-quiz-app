@@ -10,4 +10,12 @@ export const Container = styled.div`
   @media ${device.lg} {
     padding: 5.18rem 1.5rem;
   }
+
+  @media ${device.sm} {
+    padding-top: 2.5rem;
+  }
+
+  @media ${device.xs} {
+    padding-top: 1rem;
+  }
 `
