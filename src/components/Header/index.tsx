@@ -11,6 +11,7 @@ import jsIcon from '../../assets/images/icon-js.svg'
 import accesibilityIcon from '../../assets/images/icon-accessibility.svg'
 
 import { HeaderContainer, SubjectTitle, SubjectTitleContainer, SwitchContainer } from './styles'
+import { AccessibilityIcon, CssIcon, HtmlIcon, JavaScriptIcon } from "../../styles/icons";
 
 interface HeaderProps {
   handleSetTheme: () => void;
@@ -20,33 +21,28 @@ interface HeaderProps {
 export default function Header({ handleSetTheme, theme }: HeaderProps) {
 
   const { subject } = useContext(QuizContext)
-  console.log(subject)
 
-  let imgSrc = ''
-  
-  switch (subject) {
-    case 'HTML':
-      imgSrc = htmlIcon
-      break;
-    case 'CSS':
-      imgSrc = cssIcon
-      break;
-    case 'JavaScript':
-      imgSrc = jsIcon
-      break;
-    case 'Accessibility':
-      imgSrc = accesibilityIcon
-      break;
-    default:
-      imgSrc = ''
-      break;
+  function renderIcon() {
+    switch (subject) {
+      case 'HTML':
+        return <HtmlIcon src={htmlIcon} alt="HTML" />
+      case 'CSS':
+        return <CssIcon src={cssIcon} alt="CSS" />
+      case 'JavaScript':
+        return <JavaScriptIcon src={jsIcon} alt="JavaScript" />
+      case 'Accessibility':
+        return <AccessibilityIcon src={accesibilityIcon} alt="Accessibility" />
+      default:
+        return null
+    }
   }
 
   return (
     <HeaderContainer>
       <SubjectTitleContainer>
-
-        {imgSrc && <img src={imgSrc} alt={`${subject} icon`} />}
+        {
+          renderIcon()
+        }
 
         <SubjectTitle>{subject}</SubjectTitle>
       </SubjectTitleContainer>
