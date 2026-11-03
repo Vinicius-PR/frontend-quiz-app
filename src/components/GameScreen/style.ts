@@ -24,6 +24,7 @@ export const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 29rem; // 464px
 `
 
 export const SpanQuestionPosition = styled.span`
