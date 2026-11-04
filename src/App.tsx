@@ -19,8 +19,6 @@ function App() {
     setTheme((state) => state === 'light' ? 'dark' : 'light')
   }
 
-  console.log('quizMode is ', quizMode)
-
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />

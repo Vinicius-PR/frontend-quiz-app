@@ -11,8 +11,7 @@ import accessibilityIcon from '../../assets/images/icon-accessibility.svg'
 
 export default function StartScreen() {
 
-  const { handleSetSubject, quiz } = useContext(QuizContext)
-  console.log('quiz is', quiz)
+  const { handleSetSubject } = useContext(QuizContext)
 
   return (
     <Container>

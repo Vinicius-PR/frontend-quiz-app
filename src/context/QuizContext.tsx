@@ -24,6 +24,7 @@ interface QuizContextProps {
   handleSetSubject: (subject: SubjectProps) => void
   handleCheckAnswer: (selectedOption: string, answer: string) => boolean
   handleReset: () => void
+  handleNextQuestion: () => void
 }
 
 interface QuizContextProviderProps {
@@ -53,8 +54,6 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
       throw new Error('ERRO AO PROCURAR PELO SUBJECT')
     }
 
-    console.log('quantidade de questoes', quizData.questions.length)
-
     setQuiz(quizData)
     setSubject(subject)
     setQuizMode('running')
@@ -62,13 +61,16 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
   }
 
   function handleCheckAnswer(selectedOption: string, answer: string) {
-    setCurrentQuestionPos((current) => current + 1)
     if (selectedOption === answer) {
       setTotalRightAnswers((current) => current + 1)
       return true
     }
 
-    return false     
+    return false
+  }
+
+  function handleNextQuestion() {
+    setCurrentQuestionPos((current) => current + 1)
   }
 
   function handleReset() {
@@ -91,7 +93,8 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
         currentQuestionPos,
         handleSetSubject,
         handleCheckAnswer,
-        handleReset
+        handleReset,
+        handleNextQuestion
       }}
     >
       {children}

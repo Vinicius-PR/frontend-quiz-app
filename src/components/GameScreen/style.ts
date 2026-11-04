@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {textPreset3, textPreset3Mobile, textPreset4, textPreset4Mobile, textPreset5Mobile, textPreset6 } from '../../styles/typography'
+import {textPreset3, textPreset3Mobile, textPreset4, textPreset4Mobile, textPreset5Mobile, textPreset5Regular, textPreset6 } from '../../styles/typography'
 
 import { device } from '../../styles/breakpoints';
 
@@ -48,6 +48,9 @@ export const QuestionTitle = styled.h2`
 export const OptionsContainer = styled.div`
   max-width: 35.25rem; // 564px
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
   ul {
     display: flex;
@@ -59,16 +62,19 @@ export const OptionsContainer = styled.div`
       color: ${props => props.theme.colors.text};
       ;
       border-radius: 24px;
-      height: 6.5rem;
+      min-height: 6.5rem;
       line-height: normal;
       list-style: none;
       
       @media ${device.md} {
-        height: 5.5rem;
+        min-height: 5.5rem;
       }
 
       @media ${device.sm} {
-        height: 4.5rem;
+        min-height: 4.5rem;
+      }
+       @media ${device.xs} {
+        border-radius: 12px;
       }
     }
   }
@@ -85,21 +91,40 @@ export const LabelOption = styled.label`
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
   padding: 1.5rem;
   border-radius: 24px;
   cursor: pointer;
   border: 3px solid transparent;
+
   &:hover {
     border-color: ${props => props.theme.colors.primary};
   }
 
-  &:has(input:checked) {
+  &[data-status='idle']:has(input:checked) {
     border-color: ${props => props.theme.colors.primary};
   }
 
-  &:has(input:checked) span {
+  &[data-status='idle']&:has(input:checked) span {
     background-color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.white};
+  }
+
+  &[data-status='correct']:has(input:checked) {
+    border-color: ${props => props.theme.colors.green};
+  }
+
+  &[data-status='correct']:has(input:checked) span {
+    background-color: ${props => props.theme.colors.green};
+    color: ${props => props.theme.colors.white};
+  }
+
+  &[data-status='incorrect']:has(input:checked) {
+    border-color: ${props => props.theme.colors.incorrect};
+  }
+
+  &[data-status='incorrect']:has(input:checked) span {
+    background-color: ${props => props.theme.colors.incorrect};
     color: ${props => props.theme.colors.white};
   }
 
@@ -112,17 +137,28 @@ export const LabelOption = styled.label`
     ${textPreset4Mobile};
   }
 
+  @media ${device.xs} {
+    border-radius: 12px;
+  }
+
   input[type="radio"] {
     display: none;
   }
+`
+
+export const ImgLabelContainer = styled.div`
+  min-width: 40px;
+  height: 40px;
+  margin-left: auto;
 `
 
 export const SpanOptionLetter = styled.span`
   ${textPreset4};
   color: ${props => props.theme.colors.spanText};
   background-color: ${props => props.theme.colors.background};
-  width: 3.5rem;
-  height: 3.5rem;
+
+  min-width: 3.5rem;
+  min-height: 3.5rem;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -130,8 +166,8 @@ export const SpanOptionLetter = styled.span`
 
   @media ${device.sm} {
     ${textPreset4Mobile};
-    width: 2.5rem;
-    height: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
   }
 `
 
@@ -151,4 +187,46 @@ export const ProgressLine = styled.div<{ $progress: number}>`
   background-color: ${props => props.theme.colors.primary};
   border: 4px solid ${props => props.theme.colors.progressLineBack};
   border-radius: 8px;
+`
+
+export const ButtonSubmitAnswer = styled.button`
+  width: 100%;
+  ${textPreset4};
+  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.primary};
+  border: none;
+  border-radius: 24px;
+  padding: 2rem;
+  cursor: pointer;
+
+  &[data-select='false'] {
+    background-color: color-mix(
+      in srgb,
+      ${props => props.theme.colors.primary} 50%,
+      ${props => props.theme.colors.white} 50%
+    );
+  }
+
+  @media ${device.sm} {
+    padding: 1.5rem;
+    ${textPreset4Mobile}
+  }
+
+  @media ${device.xs} {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+`
+
+export const ErrorContainer = styled.div<{ $showError: boolean }>`
+  visibility: ${props => props.$showError ? 'visible' : 'hidden'};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+`
+
+export const ErrorMessage = styled.span`
+  ${textPreset5Regular};
+  color: ${props => props.theme.colors.incorrect};
 `
