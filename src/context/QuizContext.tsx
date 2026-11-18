@@ -51,7 +51,6 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
 
     if (!quizData) {
       alert(`Subject ${subject} not found`)
-      // SHOW ERROR PAGE HERE
       throw new Error('ERRO AO PROCURAR PELO SUBJECT')
     }
 
