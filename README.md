@@ -1,75 +1,60 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Password generator app solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my solution to the [Frontend Quiz app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/frontend-quiz-app-BE7xkzXQnU).
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### The challenge
 
-## Expanding the ESLint configuration
+The challenge is to build a quiz covering four subjects: HTML, CSS, JavaScript, and Accessibility.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Users should be able to:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Select a quiz subject
+- Select a single answer from each question from a choice of four
+- See an error message when trying to submit an answer without making a selection
+- See if they have made a correct or incorrect choice when they submit an answer
+- Move on to the next question after seeing the question result
+- See a completed state with the score after the final question
+- Play again to choose another subject
+- See hover and focus states for all interactive elements on the page
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Screenshot
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![Screenshot of the solution](./screenshot.jpeg)
 
-```
+### Links
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+- Solution URL: [Solution URL](https://github.com/Vinicius-PR/frontend-quiz-app)
+- Live Site URL: [live site URL](https://frontend-quiz-app-orcin-ten.vercel.app/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## My process
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Built with
 
-```
+- Vite
+- React
+- Styled-components
+- TypeScript
+
+### What I learned
+
+With this project, I learned more about using **data-*** attributes in HTML elements to control different visual states. When working with styled-components, this approach was especially useful for applying conditional styles.
+
+Also, I learned how to organize themes, colors, and breakpoints, making the project easier to maintain and update in the future.
+
+## Author
+
+- Frontend Mentor - [@Vinicius-PR](https://www.frontendmentor.io/profile/Vinicius-PR)
+- Linkedin - [@Vinicius](https://www.linkedin.com/in/vinicius-paula-resende/)
