@@ -15,7 +15,7 @@ interface QuizProps {
 
 interface QuizContextProps {
   currentQuestionPos: number
-  quizMode: 'idle' | 'running'
+  quizMode: 'idle' | 'running' | 'finished'
   subject: SubjectProps
   quiz: QuizProps
   totalQuestions: number
@@ -25,6 +25,7 @@ interface QuizContextProps {
   handleCheckAnswer: (selectedOption: string, answer: string) => boolean
   handleReset: () => void
   handleNextQuestion: () => void
+  handleGameFinished: () => void
 }
 
 interface QuizContextProviderProps {
@@ -35,8 +36,8 @@ export const QuizContext = createContext({} as QuizContextProps)
 
 export function QuizContextProvider({ children }:QuizContextProviderProps) {
 
-  const [quizMode, setQuizMode] = useState<'idle' | 'running'>('idle')
-  const [subject, setSubject] = useState<SubjectProps>('')
+  const [quizMode, setQuizMode] = useState<'idle' | 'running' | 'finished'>('idle')
+  const [subject, setSubject] = useState<SubjectProps>('HTML')
   const [quiz, setQuiz] = useState<QuizProps>({} as QuizProps)
   const [totalQuestions, setTotalQuestions] = useState(0)
   const [totalRightAnswers, setTotalRightAnswers] = useState(0)
@@ -73,6 +74,10 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
     setCurrentQuestionPos((current) => current + 1)
   }
 
+  function handleGameFinished() {
+    setQuizMode('finished')
+  }
+
   function handleReset() {
     setQuizMode('idle')
     setSubject('')
@@ -94,7 +99,8 @@ export function QuizContextProvider({ children }:QuizContextProviderProps) {
         handleSetSubject,
         handleCheckAnswer,
         handleReset,
-        handleNextQuestion
+        handleNextQuestion,
+        handleGameFinished
       }}
     >
       {children}

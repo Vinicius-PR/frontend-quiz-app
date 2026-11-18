@@ -9,6 +9,7 @@ import { ThemeProvider } from "styled-components"
 import { Container } from "./styles/container"
 import { lightTheme, darkTheme } from "./styles/themes"
 import { GlobalStyle } from "./styles/GlobalStyle"
+import GameFinished from "./components/GameFinished"
 
 function App() {
 
@@ -27,9 +28,15 @@ function App() {
           handleSetTheme={handleSetTheme}
           theme={theme}
         />
-        {
-          quizMode === "idle" ? <StartScreen/> : <GameScreen/>
-        }
+        {/* {
+          quizMode === "idle" 
+            ? <StartScreen/> 
+            : quizMode === "running"
+              ? <GameScreen/>
+              : <GameFinished/>
+        } */}
+        {/* <StartScreen/> */}
+        <GameFinished/>
       </Container>
     </ThemeProvider>
   )

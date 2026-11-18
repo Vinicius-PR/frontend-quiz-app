@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { device } from "../../styles/breakpoints";
-import { textPreset4, textPreset4Mobile } from "../../styles/typography";
+import styled from "styled-components"
+import { device } from "../../styles/breakpoints"
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -9,25 +8,6 @@ export const HeaderContainer = styled.header`
 
   @media ${device.md} {
     margin-bottom: 50px;
-  }
-`
-
-export const SubjectTitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-
-  @media ${device.sm} {
-    gap: 1rem;
-  }
-`
-
-export const SubjectTitle = styled.h2`
-  ${textPreset4};
-  color: ${props => props.theme.colors.text};
-
-  @media ${device.sm} {
-    ${textPreset4Mobile};
   }
 `
 

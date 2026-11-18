@@ -6,7 +6,7 @@ import correctIcon from '../../assets/images/icon-correct.svg'
 
 export default function GameScreen() {
   
-  const { quiz, currentQuestionPos, handleCheckAnswer, handleNextQuestion } = useContext(QuizContext)
+  const { quiz, currentQuestionPos, handleCheckAnswer, handleNextQuestion, handleGameFinished } = useContext(QuizContext)
 
   const [questionSelected, setQuestionSelected] = useState<string | null>('')
   const [questionAnswered, setQuestionAnswered] = useState(false)
@@ -104,6 +104,8 @@ export default function GameScreen() {
           onClick={() => {
             if (questionAnswered === false) {
               submitAnswer()
+            } else if (quiz.questions.length === currentQuestionPos) {
+              handleGameFinished()
             } else {
               goToNextQuestion()
             }
