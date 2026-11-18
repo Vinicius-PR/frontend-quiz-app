@@ -15,7 +15,11 @@ function App() {
 
   const { quizMode } = useContext(QuizContext)
 
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [theme, setTheme] = useState<'light' | 'dark'>(() =>
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+  )
   function handleSetTheme() {
     setTheme((state) => state === 'light' ? 'dark' : 'light')
   }
