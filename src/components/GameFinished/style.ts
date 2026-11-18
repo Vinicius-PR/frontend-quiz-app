@@ -3,10 +3,10 @@ import { device } from "../../styles/breakpoints"
 import { textPreset1, textPreset1Mobile, textPreset2Light, textPreset2Medium, textPreset2MobileLight, textPreset2MobileMedium, textPreset4, textPreset4Mobile, textPreset5Regular} from "../../styles/typography"
 
 export const GameFinishedContainer = styled.div`
-  color: ${props => props.theme.colors.text};
   display: flex;
-  gap: 9rem; // 144px 
+  gap: 8rem; // 128px
   max-width: 72.30rem; // 1156.8px
+  color: ${props => props.theme.colors.text};
 
   @media ${device.ml} {
     flex-direction: column;
@@ -20,7 +20,10 @@ export const GameFinishedContainer = styled.div`
   }
 `
 
-export const GameFinishedContent = styled.div``
+export const GameFinishedContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export const GameFinishedText1 = styled.h2`
   ${textPreset2Light}

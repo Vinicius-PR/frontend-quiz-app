@@ -28,15 +28,13 @@ function App() {
           handleSetTheme={handleSetTheme}
           theme={theme}
         />
-        {/* {
+        {
           quizMode === "idle" 
             ? <StartScreen/> 
             : quizMode === "running"
               ? <GameScreen/>
               : <GameFinished/>
-        } */}
-        {/* <StartScreen/> */}
-        <GameFinished/>
+        }
       </Container>
     </ThemeProvider>
   )

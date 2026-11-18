@@ -37,7 +37,7 @@ export const QuizContext = createContext({} as QuizContextProps)
 export function QuizContextProvider({ children }:QuizContextProviderProps) {
 
   const [quizMode, setQuizMode] = useState<'idle' | 'running' | 'finished'>('idle')
-  const [subject, setSubject] = useState<SubjectProps>('HTML')
+  const [subject, setSubject] = useState<SubjectProps>('')
   const [quiz, setQuiz] = useState<QuizProps>({} as QuizProps)
   const [totalQuestions, setTotalQuestions] = useState(0)
   const [totalRightAnswers, setTotalRightAnswers] = useState(0)

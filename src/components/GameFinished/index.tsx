@@ -6,7 +6,7 @@ import { QuizContext } from "../../context/QuizContext"
 
 export default function GameFinished() {
 
-  const { subject, totalQuestions } = useContext(QuizContext)
+  const { subject, totalQuestions, totalRightAnswers, handleReset } = useContext(QuizContext)
 
   return (
     <GameFinishedContainer>
@@ -32,7 +32,7 @@ export default function GameFinished() {
         
           <ResultTextContainer>
             <ResultText>
-              8
+              {totalRightAnswers}
             </ResultText>
 
             <ResultSpan>
@@ -43,7 +43,9 @@ export default function GameFinished() {
         </ResultContent>
 
 
-        <PlayAgainButton>
+        <PlayAgainButton
+          onClick={handleReset}
+        >
           Play Again
         </PlayAgainButton>
       </ResultContainer>
