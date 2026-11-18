@@ -43,7 +43,7 @@ export default function GameScreen() {
     <GameScreenContainer>
 
       <QuestionContainer>
-        <SpanQuestionPosition>Question {currentQuestionPos} to {quiz.questions.length}</SpanQuestionPosition>
+        <SpanQuestionPosition>Question {currentQuestionPos} of {quiz.questions.length}</SpanQuestionPosition>
 
         <QuestionTitle>
           {quiz.questions[currentQuestionPos - 1].question}
