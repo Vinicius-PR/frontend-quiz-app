@@ -101,6 +101,11 @@ export const LabelOption = styled.label`
     border-color: ${props => props.theme.colors.primary};
   }
 
+  &[data-status='idle']:has(input:focus-visible) {
+    outline: 2px solid ${({ theme }) => theme.colors.primary};
+    outline-offset: 2px;
+  }
+
   &[data-status='idle']:has(input:checked) {
     border-color: ${props => props.theme.colors.primary};
   }
@@ -142,7 +147,12 @@ export const LabelOption = styled.label`
   }
 
   input[type="radio"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
   }
 `
 
